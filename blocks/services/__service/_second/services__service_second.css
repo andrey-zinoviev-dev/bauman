@@ -1,0 +1,10 @@
+.services__service_second {
+  background-color: #34c657;
+  align-self: end;
+  justify-self: end;
+  min-width: 160px;
+  min-height: 140px;
+  grid-row: 1/1;
+  margin-right: -70px;
+  /* grid-column: 1/2; */
+}

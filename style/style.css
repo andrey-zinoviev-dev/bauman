@@ -1,0 +1,17 @@
+@import url(../blocks/root/root.css);
+@import url(../blocks/container/container.css);
+@import url(../blocks/services/servcies.css);
+@import url(../blocks/services/__service/_first/services__service_first.css);
+@import url(../blocks/services/__service/_second/services__service_second.css);
+@import url(../blocks/services/__service/_third/services__service_third.css);
+@import url(../blocks/services/__service/_fourth/services__service_fourth.css);
+@import url(../blocks/services/__service/_fifth/services__service_fifth.css);
+@import url(../blocks/services/__service/_sixth/services__service_sixth.css);
+@import url(../blocks/services/__service/_seventh/services__service_seventh.css);
+@import url(../blocks/services/__service/_eighth/services__service_eighth.css);
+@import url(../blocks/services/__service/_ninth/services__service_ninth.css);
+@import url(../blocks/services/__service/_tenth/services__service_tenth.css);
+@import url(../blocks/services/__service/_eleventh/services__service_eleventh.css);
+@import url(../blocks/services/__service/_twelveth/services__service_twelveth.css);
+@import url(../blocks/services/__service/_thirteenth/services__service_thirteenth.css);
+@import url(../blocks/services/__service/_fourteenth/services__service_fourteenth.css);

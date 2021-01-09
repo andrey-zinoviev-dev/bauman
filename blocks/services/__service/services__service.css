@@ -1,0 +1,10 @@
+.services__service {
+  clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
+  cursor: pointer;
+  transition: transform 0.3s linear;
+  outline: none;
+}
+.services__service:hover {
+  transform: scale3d(1.2, 1.2, 1.2);
+  z-index: 2;
+}
