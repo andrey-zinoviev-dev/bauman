@@ -11,4 +11,5 @@
   /* grid-auto-rows: 210px; */
   grid-gap: 10px;
   padding: 90px 0;
+  justify-content: center;
 }
