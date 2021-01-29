@@ -1,13 +1,29 @@
 const servicesBlock = document.querySelector('.services');
 const blocks = Array.from(document.querySelectorAll('.services__service'));
-const slides = document.querySelector('.slides');
-//потом переделать вставку картинок для слайдера через класс Section
 
-// pics.forEach((pic) => {
-//     const slide = new Picture('#picture', pic.service, pic.link);
-//     const finalSLide = slide._fillTemplate();
-//     slides.append(finalSLide);
-// })
+//счетчик слайдера
+let counter = 1;
+//экземпляр класса Slider
+const slider = new Slider('.slider', counter, '#slider');
+const sliderTemplate = slider.generateSlider();
+slider.addItem(sliderTemplate);
+
+//экземпляр класса Section для вставки картинок на страницу
+const defaultSlides = new Section(null, () => {}, ".slides");
+defaultSlides.items = pics;
+
+//функция создания экземпляра класса Picture (создание картинок)
+function createSlide({service, link}) {
+    const image = new Picture('#picture', service, link);
+    defaultSlides.addItem(image._fillTemplate());
+}
+//задание свойства renderer экземпляра класса Section
+defaultSlides.renderer = (item) => {
+    createSlide(item)
+}
+//отрисовка картинок
+defaultSlides.itemsRenderer();
+
 function showBgColor (block) {
     switch (getComputedStyle(block).backgroundColor) {
         case "rgb(52, 198, 87)":
@@ -63,9 +79,9 @@ function showBgColor (block) {
 function hideBgColor () {
     servicesBlock.style.setProperty('--services-bg-variable', "white");
 }
-blocks.forEach((block) => {
-    block.addEventListener('mouseover', (evt) => {
-        showBgColor(evt.target);
-    })
-    block.addEventListener('mouseout', hideBgColor);
-})
+// blocks.forEach((block) => {
+//     block.addEventListener('mouseover', (evt) => {
+//         showBgColor(evt.target);
+//     })
+//     block.addEventListener('mouseout', hideBgColor);
+// })

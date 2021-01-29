@@ -18,6 +18,8 @@
 @import url(../blocks/services/__service/_twelveth/services__service_twelveth.css);
 @import url(../blocks/services/__service/_thirteenth/services__service_thirteenth.css);
 @import url(../blocks/services/__service/_fourteenth/services__service_fourteenth.css);
+@import url(../blocks/slider/slider.css);
+@import url(../blocks/slides/slides.css);
 ul {
     padding: 0;
     list-style: none;

@@ -5,7 +5,7 @@ class Picture {
         this.link = link;
     }
     _getImageTemplate() {
-        const imageTemplate = document.querySelector(this._imageTemplateSelector).content.querySelector('.slide').cloneNode(true);
+        const imageTemplate = document.querySelector(this._imageTemplateSelector).content.querySelector('.slides__slide').cloneNode(true);
         return imageTemplate;
     }
     _setEventListener() {
@@ -15,8 +15,9 @@ class Picture {
     }
     _fillTemplate() {
         this._element = this._getImageTemplate();
-        this._element.querySelector('.slide__img').src = this.link;
-        this._element.querySelector('.slide__span').textContent = this.service;
+        this._element.querySelector('.slides__slide-img').src = this.link;
+        this._element.querySelector('.slides__slide-span').textContent = this.service;
+        this._setEventListener();
         return this._element;
     }
 }

@@ -1,31 +1,31 @@
 const pics = [
     {
         service: "Резервуары",
-        link: "https://www.mirf.ru/wp-content/uploads/2017/05/Prey_art.jpg"
+        link: "https://gh.cdn.sewest.net/assets/ident//galleries/undefined/de_DE/DXMD_2016_07_18_PREVIEW_ONLINE-44.jpg?quality=65"
     },
     {
         service: "Модульные компрессорные станции",
-        link: "https://storage.energybase.ru/source/247/255891.jpg"
+        link: "https://www.mobygames.com/images/promo/original/1472929224-4121308327.jpg"
     },
     {
         service: "Компрессорное оборудование",
-        link: "https://www.melcom-ural.ru/UPLOAD/2018/06/20/nasosno-kompressornoe-oborudovanie_1500_1500.jpg"
+        link: "https://games.mail.ru/hotbox/content_files/gallery/02/26/582863bd.jpeg"
     },
     {
         service: "Насосное оборудование",
-        link: "https://brigadir-instrument.ru/upload/iblock/e60/e601713121e2269206fb2aaf9b2b1129.jpg"
+        link: "https://www.gamereactor.eu/media/67/deusex_1786763b.jpg"
     },
     {
         service: "Птицезащитные устройства",
-        link: "https://opt-550844.ssl.1c-bitrix-cdn.ru/upload/iblock/368/____6-10__-_.jpg?1494935434345243"
+        link: "https://3dpapa.ru/wp-content/uploads/2016/08/Moscow_Cities_of_2029_DXMD.jpg"
     },
     {
         service: "Электрооборудование",
-        link: "https://lh3.googleusercontent.com/proxy/FrnBP6z5uloKbPut-qDIkO8zuIixQy7ltUznUiLRs6r-Tz7Ltvpd_LB4_t9b1RfHHPLnRzvyzEJ1fh13DH3I5rbsPdHhjXIVB0SJQZXW"
+        link: "https://cdn.mos.cms.futurecdn.net/SzcTWZ8aGk8ZLGtq7niMc4.png"
     },
     {
         service: "Электростанции",
-        link: "https://evolution.skf.com/wp-content/uploads/sites/5/2019/06/the-maasvlakte-power-plant-3-netherlands-1920x915.jpg"
+        link: "https://i.imgur.com/c3CdnD9.jpg"
     },
     {
         service: "Нестандартное оборудование",
@@ -33,7 +33,7 @@ const pics = [
     },
     {
         service: "Трубопрводы",
-        link: "https://lh3.googleusercontent.com/proxy/J_4jb5Pll9ZzGQ9J1d_TE4nVbfbe1ZkvolnbDX1g0W9eDgguZsaw2cTRj0TVPFpPV0P9HFrQH4Bu-Un1EiGuW8vO2HgET7Y6ZtaIv6kZprBawT2qLWBZB1PCJ1ai0olA_XmK5ua82cqA"
+        link: "https://cdna.artstation.com/p/assets/images/images/006/079/962/large/fred-augis-guts-2.jpg?1495898337"
     },
     {
         service: "Металлоконструкции",
