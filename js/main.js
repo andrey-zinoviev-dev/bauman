@@ -2,9 +2,9 @@ const servicesBlock = document.querySelector('.services');
 const blocks = Array.from(document.querySelectorAll('.services__service'));
 
 //счетчик слайдера
-let counter = 1;
+let counter = 0;
 //экземпляр класса Slider
-const slider = new Slider('.slider', counter, '#slider');
+const slider = new Slider('.slider', counter, pics.length, '#slider');
 const sliderTemplate = slider.generateSlider();
 slider.addItem(sliderTemplate);
 

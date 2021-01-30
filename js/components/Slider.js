@@ -1,7 +1,8 @@
 class Slider {
-    constructor(sliderSelector, counter, templateSelector) {
+    constructor(sliderSelector, counter, picsLength, templateSelector) {
         this.sliderSelector = document.querySelector(sliderSelector);
         this.counter = counter;
+        this.picsLength = picsLength;
         this.templateSelector = document.querySelector(templateSelector);
     }
     _getTemplate() {
@@ -9,16 +10,26 @@ class Slider {
         return sliderTemplate;
     }
     addItem(element) {
-        this.sliderSelector.querySelector('.container').append(element);
+        this.sliderSelector.querySelector('.slider__wrapper').append(element);
     }
     _setEventListeners() {
         this.sliderSelector.querySelector('.slider__left').addEventListener('click', () => {
             // console.log(this.element.querySelector('.slides__slide').clientWidth);
-            this.sliderSelector.querySelector('.container').style.transform = `translateX(${1280 * this.counter}px)`;
+            if(this.counter <= 0) {
+                this.counter = this.picsLength;
+            }
+            this.counter -=1;
+            this.sliderSelector.querySelector('.slider__wrapper').style.transform = `translateX(${-1280 * this.counter}px)`;
+            console.log(this.counter);
         });
         this.sliderSelector.querySelector('.slider__right').addEventListener('click', () => {
             // console.log(this.element.querySelector('.slides__slide').clientWidth);
-            this.sliderSelector.querySelector('.container').style.transform = `translateX(${-1280 * this.counter}px)`;
+            if(this.counter >= this.picsLength - 1) {
+                this.counter = -1;
+            }
+            this.counter +=1;
+            this.sliderSelector.querySelector('.slider__wrapper').style.transform = `translateX(${-1280 * this.counter}px)`;
+            console.log(this.counter);
         });   
     }
     generateSlider() {
