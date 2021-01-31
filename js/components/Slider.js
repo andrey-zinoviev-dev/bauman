@@ -12,25 +12,47 @@ class Slider {
     addItem(element) {
         this.sliderSelector.querySelector('.slider__wrapper').append(element);
     }
+    setCounterToZero() {
+        if(this.counter >= this.picsLength - 1) {
+            this.counter = -1;
+        }
+    }
+    setCounterToLastNumber() {
+        if(this.counter <= 0) {
+            this.counter = this.picsLength;
+        }
+    }
     _setEventListeners() {
         this.sliderSelector.querySelector('.slider__left').addEventListener('click', () => {
             // console.log(this.element.querySelector('.slides__slide').clientWidth);
-            if(this.counter <= 0) {
-                this.counter = this.picsLength;
-            }
+            // if(this.counter <= 0) {
+            //     this.counter = this.picsLength;
+            // }
+            this.setCounterToLastNumber();
             this.counter -=1;
             this.sliderSelector.querySelector('.slider__wrapper').style.transform = `translateX(${-1280 * this.counter}px)`;
-            console.log(this.counter);
         });
         this.sliderSelector.querySelector('.slider__right').addEventListener('click', () => {
             // console.log(this.element.querySelector('.slides__slide').clientWidth);
-            if(this.counter >= this.picsLength - 1) {
-                this.counter = -1;
-            }
+            // if(this.counter >= this.picsLength - 1) {
+            //     this.counter = -1;
+            // }
+            this.setCounterToZero();
             this.counter +=1;
             this.sliderSelector.querySelector('.slider__wrapper').style.transform = `translateX(${-1280 * this.counter}px)`;
-            console.log(this.counter);
         });   
+        
+    }
+    autoChangePic() {
+        // if(this.counter >= this.picsLength - 1) {
+        //     this.counter = -1;
+        // }
+        this.setCounterToZero();
+        this.counter +=1;
+        this.sliderSelector.querySelector('.slider__wrapper').style.transform = `translateX(${-1280 * this.counter}px)`;
+        setTimeout(() => {
+            this.autoChangePic();
+        }, 3000)
     }
     generateSlider() {
         this.element = this._getTemplate();

@@ -7,7 +7,9 @@ let counter = 0;
 const slider = new Slider('.slider', counter, pics.length, '#slider');
 const sliderTemplate = slider.generateSlider();
 slider.addItem(sliderTemplate);
-
+setTimeout(() =>{
+    slider.autoChangePic();
+}, 3000)
 //экземпляр класса Section для вставки картинок на страницу
 const defaultSlides = new Section(null, () => {}, ".slides");
 defaultSlides.items = pics;
