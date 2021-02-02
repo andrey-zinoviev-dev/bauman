@@ -60,14 +60,16 @@
     <section class="slider">
       <div class="container container_slider">
         <div class="slider__wrapper"></div>
+        <button class="slider__left"><img class="slider__left-img" src="https://img.icons8.com/ios/452/chevron-right.png" alt=""></button>
+        <button class="slider__right"><img class="slider__right-img" src="https://img.icons8.com/ios/452/chevron-right.png" alt=""></button>
+        <div class="thumbnails"></div>
       </div>
       <!-- <div class="container">
         <div class="slides">
           
         </div>
       </div> -->
-      <button class="slider__left"><------</button>
-      <button class="slider__right">------></button>
+      
     </section>
   </main>
   <template id="slider">
@@ -79,6 +81,9 @@
       <img class="slides__slide-img" src="" alt="">
       <span class="slides__slide-span"></span>
     </div>
+  </template>
+  <template id="thumbnail">
+    <button class="slider__thumbnail"></button>
   </template>
   <script src="./js/components/Section.js"></script>
   <script src="./js/components/Slider.js"></script>

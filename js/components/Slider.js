@@ -1,25 +1,45 @@
 class Slider {
-    constructor(sliderSelector, counter, picsLength, templateSelector) {
+    constructor(sliderSelector, counter, pics, templateSelector, thumbnailTemplateSelector) {
         this.sliderSelector = document.querySelector(sliderSelector);
         this.counter = counter;
-        this.picsLength = picsLength;
+        this.pics = pics;
         this.templateSelector = document.querySelector(templateSelector);
+        this.thumbnailTemplateSelector = document.querySelector(thumbnailTemplateSelector);
     }
     _getTemplate() {
         const sliderTemplate = this.templateSelector.content.cloneNode(true);
         return sliderTemplate;
     }
+    _getThumbnailTemplate() {
+        const thumbnailTemplate = this.thumbnailTemplateSelector.content.cloneNode(true);
+        return thumbnailTemplate;
+    }
     addItem(element) {
         this.sliderSelector.querySelector('.slider__wrapper').append(element);
     }
+    addThumbnails() {
+        pics.forEach((element, i) => {
+            const button = this._getThumbnailTemplate()
+            this.sliderSelector.querySelector('.thumbnails').append(button);
+        })
+    }
+    clickThumbnails() {
+        const thumbnails = Array.from(this.sliderSelector.querySelectorAll('.slider__thumbnail'));
+        thumbnails.forEach((thumbnail, i) => {
+            thumbnail.addEventListener('click', () => {
+                this.counter = i;
+                this.sliderSelector.querySelector('.slider__wrapper').style.transform = `translateX(${-1280 * this.counter}px)`;
+            })
+        })
+    }
     setCounterToZero() {
-        if(this.counter >= this.picsLength - 1) {
+        if(this.counter >= this.pics.length - 1) {
             this.counter = -1;
         }
     }
     setCounterToLastNumber() {
         if(this.counter <= 0) {
-            this.counter = this.picsLength;
+            this.counter = this.pics.length;
         }
     }
     _setEventListeners() {
@@ -52,7 +72,7 @@ class Slider {
         this.sliderSelector.querySelector('.slider__wrapper').style.transform = `translateX(${-1280 * this.counter}px)`;
         setTimeout(() => {
             this.autoChangePic();
-        }, 3000)
+        }, 5000)
     }
     generateSlider() {
         this.element = this._getTemplate();

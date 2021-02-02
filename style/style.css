@@ -21,6 +21,7 @@
 @import url(../blocks/services/__service/_fourteenth/services__service_fourteenth.css);
 @import url(../blocks/slider/slider.css);
 @import url(../blocks/slides/slides.css);
+@import url(../blocks/thumbnails/thumbnails.css);
 ul {
     padding: 0;
     list-style: none;
@@ -28,4 +29,11 @@ ul {
 a {
     color: black;
     text-decoration: none;
+}
+button {
+    background-color: rgba(0,0,0,0);
+    padding: 0;
+    outline: none;
+    border: none;
+    cursor: pointer;
 }

@@ -4,12 +4,12 @@ const blocks = Array.from(document.querySelectorAll('.services__service'));
 //счетчик слайдера
 let counter = 0;
 //экземпляр класса Slider
-const slider = new Slider('.slider', counter, pics.length, '#slider');
+const slider = new Slider('.slider', counter, pics, '#slider', "#thumbnail");
 const sliderTemplate = slider.generateSlider();
 slider.addItem(sliderTemplate);
 setTimeout(() =>{
     slider.autoChangePic();
-}, 3000)
+}, 5000)
 //экземпляр класса Section для вставки картинок на страницу
 const defaultSlides = new Section(null, () => {}, ".slides");
 defaultSlides.items = pics;
@@ -21,10 +21,15 @@ function createSlide({service, link}) {
 }
 //задание свойства renderer экземпляра класса Section
 defaultSlides.renderer = (item) => {
-    createSlide(item)
+    createSlide(item);
+    // slider.addThumbnails();
 }
 //отрисовка картинок
 defaultSlides.itemsRenderer();
+
+//вставка миниатюрных картинок под слайдером
+slider.addThumbnails();
+slider.clickThumbnails();
 
 function showBgColor (block) {
     switch (getComputedStyle(block).backgroundColor) {
