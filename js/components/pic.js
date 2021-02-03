@@ -5,7 +5,7 @@ class Picture {
         this.link = link;
     }
     _getImageTemplate() {
-        const imageTemplate = document.querySelector(this._imageTemplateSelector).content.querySelector('.slides__slide').cloneNode(true);
+        const imageTemplate = document.querySelector(this._imageTemplateSelector).content.querySelector('.swiper-slide').cloneNode(true);
         return imageTemplate;
     }
     _setEventListener() {

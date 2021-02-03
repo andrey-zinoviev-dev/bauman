@@ -2,4 +2,6 @@
   margin: 0;
   padding: 0;
   font-family: 'Chakra Petch', Arial, sans-serif;
+  /* background-color: var(--services-bg-variable);
+  transition: background-color 0.6s ease-in-out; */
 }

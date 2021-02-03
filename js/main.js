@@ -1,17 +1,22 @@
-const servicesBlock = document.querySelector('.services');
+const servicesBlock = document.querySelector('body');
 const blocks = Array.from(document.querySelectorAll('.services__service'));
 
 //счетчик слайдера
 let counter = 0;
+
 //экземпляр класса Slider
-const slider = new Slider('.slider', counter, pics, '#slider', "#thumbnail");
-const sliderTemplate = slider.generateSlider();
-slider.addItem(sliderTemplate);
-setTimeout(() =>{
-    slider.autoChangePic();
-}, 5000)
+// const slider = new Slider('.slider', counter, pics, '#slider', "#thumbnail");
+// const sliderTemplate = slider.generateSlider();
+// slider.addItem(sliderTemplate);
+// setTimeout(() =>{
+//     slider.autoChangePic();
+// }, 5000)
+
+
 //экземпляр класса Section для вставки картинок на страницу
-const defaultSlides = new Section(null, () => {}, ".slides");
+// const defaultSlides = new Section(null, () => {}, ".slides");
+
+const defaultSlides = new Section(null, () => {}, ".swiper-wrapper");
 defaultSlides.items = pics;
 
 //функция создания экземпляра класса Picture (создание картинок)
@@ -19,17 +24,35 @@ function createSlide({service, link}) {
     const image = new Picture('#picture', service, link);
     defaultSlides.addItem(image._fillTemplate());
 }
+
 //задание свойства renderer экземпляра класса Section
 defaultSlides.renderer = (item) => {
     createSlide(item);
     // slider.addThumbnails();
 }
+
 //отрисовка картинок
 defaultSlides.itemsRenderer();
 
+//создание экземпляра класса Swiper
+const slider = new Swiper(".swiper-container", {
+    direction: "horizontal",
+    loop: true,
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev"
+    },
+    pagination: {
+        el: ".thumbnails"
+    },
+    autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+    }
+});
 //вставка миниатюрных картинок под слайдером
-slider.addThumbnails();
-slider.clickThumbnails();
+// slider.addThumbnails();
+// slider.clickThumbnails();
 
 function showBgColor (block) {
     switch (getComputedStyle(block).backgroundColor) {

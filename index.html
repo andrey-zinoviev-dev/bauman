@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./style/style.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
   <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap" rel="stylesheet">
   <title>Document</title>
 </head>
@@ -58,10 +59,11 @@
       <div class="services__service services__service_fourteenth"></div>
     </section>
     <section class="slider">
-      <div class="container container_slider">
-        <div class="slider__wrapper"></div>
-        <button class="slider__left"><img class="slider__left-img" src="https://img.icons8.com/ios/452/chevron-right.png" alt=""></button>
-        <button class="slider__right"><img class="slider__right-img" src="https://img.icons8.com/ios/452/chevron-right.png" alt=""></button>
+      <div class="container container_slider swiper-container">
+        <!-- <div class="slider__wrapper"></div> -->
+        <div class="slider__wrapper swiper-wrapper"></div>
+        <button class="slider__left swiper-button-prev"></button>
+        <button class="slider__right swiper-button-next"></button>
         <div class="thumbnails"></div>
       </div>
       <!-- <div class="container">
@@ -77,7 +79,7 @@
     </div>
   </template>
   <template id="picture">
-    <div class="slides__slide">
+    <div class="swiper-slide">
       <img class="slides__slide-img" src="" alt="">
       <span class="slides__slide-span"></span>
     </div>
@@ -85,10 +87,12 @@
   <template id="thumbnail">
     <button class="slider__thumbnail"></button>
   </template>
+  <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
   <script src="./js/components/Section.js"></script>
   <script src="./js/components/Slider.js"></script>
   <script src="./js/components/pic.js"></script>
   <script src="./js/pics.js"></script>
   <script src="./js/main.js"></script>
+  <!-- <script src="./js/sliderTest.js"></script> -->
 </body>
 </html>
