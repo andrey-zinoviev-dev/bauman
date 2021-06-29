@@ -1,17 +1,21 @@
 @import url(./__service/services__service.css);
-
+@import url(./__service-shadow/services__service-shadow.css);
 .services {
-  display: grid;
+  /* display: grid; */
   /* grid-template-columns: repeat(5, 320px); */
-  grid-template-columns: repeat(5, 160px);
-  grid-auto-columns: 1fr;
+  /* grid-template-columns: repeat(5, 160px);
+  grid-auto-columns: 1fr; */
   /* grid-auto-rows: 200px; */
-  grid-auto-rows: 140px;
-  grid-auto-columns: 160px;
+  /* grid-auto-rows: 140px;
+  grid-auto-columns: 160px; */
   /* grid-auto-rows: 210px; */
-  grid-gap: 10px;
-  padding: 180px 0 90px 0;
-  justify-content: center;
+  /* grid-gap: 10px;
+  padding: 90px 0;
+  justify-content: center; */
   /* background-color: var(--services-bg-variable); */
+  display: flex;
+  flex-wrap: wrap;
+  align-self: center;
+  justify-content: center;
   transition: background-color 0.6s ease-in-out;
 }

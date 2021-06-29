@@ -1,5 +1,5 @@
 .services__service_seventh {
-  background-color: #7fcddd;
+  /* background-color: #7fcddd;
   max-height: 200px;
   max-width: 230px;
   align-self: end;
@@ -7,5 +7,8 @@
   min-height: 180px;
   grid-column: 4/4;
   grid-row: 1/1;
-  margin: 0px 0px 0px -25px;
+  margin: 0px 0px 0px -25px; */
+}
+.services__service_seventh::before {
+  background-color: #7fcddd
 }

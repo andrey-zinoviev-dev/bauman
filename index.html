@@ -4,76 +4,179 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./style/style.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap" rel="stylesheet"> -->
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;500;700&display=swap" rel="stylesheet"> -->
+  <script src="https://kit.fontawesome.com/a116da90a0.js" crossorigin="anonymous"></script>
   <title>Document</title>
 </head>
 <body class="root">
-  <header class="header">
-    <div class="container">
-      <div class="header__wrapper">
-        <img class="logo" src="./pics/ENG/JPG/logo_bauman_horizont_eng.jpg" alt="логотип">
-        <div class="header__text">
-          <p class="header__text-p">Оборудование для инеженерных систем</p>
-          <span class="header__text-span">Разработка, производство, поставка</span>
-        </div>
-        <div class="header__contact">
-          <div class="header__contact-method">
-            <img class="header__contact-method-img" src="https://cdn.onlinewebfonts.com/svg/img_503524.png" alt="">
-            <a href="tel:+74957114772">+74957114772</a>
+  <div class="overlay"></div>
+    <header class="header">
+      <div class="container">
+        <!-- <div class="header__wrapper">
+          <img class="logo" src="./pics/ENG/JPG/logo_bauman_horizont_eng.jpg" alt="логотип">
+          <div class="header__text">
+            <p class="header__text-p">Оборудование для инеженерных систем</p>
+            <span class="header__text-span">Разработка, производство, поставка</span>
           </div>
-          <div class="header__contact-method">
-            <img class="header__contact-method-img" src="https://i.pinimg.com/originals/a2/dc/5c/a2dc5c3a8c443f7bce721542c2a98a2f.png" alt="">
-            <a href="tel:+79017045202">+79017045202</a>
+          <div class="header__contact">
+            <div class="header__contact-method">
+              <img class="header__contact-method-img" src="https://www.seekpng.com/png/full/792-7924973_phone-svg-png-icon-free-download-97207-onlinewebfonts.png" alt="">
+              <a class="header__contact-method-anchor" href="tel:+74957114772">+7(495)711-47-72</a>
+            </div>
+            <div class="header__contact-method">
+              <img class="header__contact-method-img" src="https://i.pinimg.com/originals/a2/dc/5c/a2dc5c3a8c443f7bce721542c2a98a2f.png" alt="">
+              <a class="header__contact-method-anchor" href="tel:+79017045202">+7(901)704-52-02</a>
+            </div>
+            <div class="header__contact-method">
+              <img class="header__contact-method-img header__contact-method-img_small" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpP73al14slwZiwIv_poYQxRbieC6q3TbUWw&usqp=CAU" alt="">
+              <a class="header__contact-method-anchor" href="mailto:info@bauman.ru">info@bauman.ru</a>
+            </div>
           </div>
-          <div class="header__contact-method">
-            <img class="header__contact-method-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpP73al14slwZiwIv_poYQxRbieC6q3TbUWw&usqp=CAU" alt="">
-            <a href="mailto:info@bauman.ru">info@bauman.ru</a>
-          </div>
-        </div>
-      </div> 
-      <ul class="header__services-list">
-        <li class="header__services-list-element"><a class="header__services-list-element-anchor" href="#">Главная</a></li>
-        <li class="header__services-list-element"><a class="header__services-list-element-anchor" href="#">Оборудование</a></li>
-        <li class="header__services-list-element"><a class="header__services-list-element-anchor" href="#">Услуги</a></li>
-        <li class="header__services-list-element"><a class="header__services-list-element-anchor" href="#">Контакты</a></li>
-      </ul>   
-    </div>
-  </header>
-  <main class="main">
-    <section class="services">
-      <div class="services__service services__service_first"></div>
-      <div class="services__service services__service_second"></div>
-      <div class="services__service services__service_third"></div>
-      <div class="services__service services__service_fourth"></div>
-      <div class="services__service services__service_fifth"></div>
-      <div class="services__service services__service_sixth"></div>
-      <div class="services__service services__service_seventh"></div>
-      <div class="services__service services__service_eighth"></div>
-      <div class="services__service services__service_ninth"></div>
-      <div class="services__service services__service_tenth"></div>
-      <div class="services__service services__service_eleventh"></div>
-      <div class="services__service services__service_twelveth"></div>
-      <div class="services__service services__service_thirteenth"></div>
-      <div class="services__service services__service_fourteenth"></div>
-    </section>
-    <section class="slider">
-      <div class="container container_slider swiper-container">
-        <!-- <div class="slider__wrapper"></div> -->
-        <div class="slider__wrapper swiper-wrapper"></div>
-        <button class="slider__left swiper-button-prev"></button>
-        <button class="slider__right swiper-button-next"></button>
-        <div class="thumbnails"></div>
+        </div>  -->
+        <ul class="header__services-list">
+          <li class="header__services-list-element"><a class="header__services-list-element-anchor" href="#">Главная</a></li>
+          <li class="header__services-list-element"><a class="header__services-list-element-anchor" href="#">Оборудование</a></li>
+          <li class="header__services-list-element"><a class="header__services-list-element-anchor" href="#">Услуги</a></li>
+          <li class="header__services-list-element"><a class="header__services-list-element-anchor" href="#">Контакты</a></li>
+        </ul>   
       </div>
-      <!-- <div class="container">
-        <div class="slides">
+    </header>
+    <main class="main">
+      <div class="overall-container">
+        <section class="content">
+          <div class="container">
+            <div class="content__text-wrapper">
+              <h1 class="content__headline">Инновационные системы электроснабжения для бизнеса и чсатных проектов</h1>
+              <p class="content__para">
+                Разрабатываем оборудование для инженерных систем, компрессорных станций. Делаем расчеты, подбираем оборудование для частных и сложных решений как для бизнеса, так и для частных заказчиков. Создаем передовые технологии и инновационные решения для эволюции и революции в строении инжереных решений
+              </p>
+              <div class="content__button-wrapper">
+                <button class="content__button">Перейти в каталог</button>
+                <button class="content__button">О компании</button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="services">
+          <div class="container">
+            <div class="services__service services__service_first">
+              <div class="services__service-shadow services__service-shadow_top"></div>
+              <div class="services__service-shadow services__service-shadow_bottom"></div>
+            </div>
+            <div class="services__service services__service_second">
+              <div class="services__service-shadow services__service-shadow_top"></div>
+              <div class="services__service-shadow services__service-shadow_bottom"></div>
+            </div>
+            <div class="services__service services__service_third">
+              <div class="services__service-shadow services__service-shadow_top"></div>
+              <div class="services__service-shadow services__service-shadow_bottom"></div>
+            </div>
+            <div class="services__service services__service_fourth">
+              <div class="services__service-shadow services__service-shadow_top"></div>
+              <div class="services__service-shadow services__service-shadow_bottom"></div>
+            </div>
+            <div class="services__service services__service_fifth">
+              <div class="services__service-shadow services__service-shadow_top"></div>
+              <div class="services__service-shadow services__service-shadow_bottom"></div>
+            </div>
+            <div class="services__service services__service_sixth">
+              <div class="services__service-shadow services__service-shadow_top"></div>
+              <div class="services__service-shadow services__service-shadow_bottom"></div>
+            </div>
+            <div class="services__service services__service_seventh">
+              <div class="services__service-shadow services__service-shadow_top"></div>
+              <div class="services__service-shadow services__service-shadow_bottom"></div>
+            </div>
+            <div class="services__service services__service_eighth">
+              <div class="services__service-shadow services__service-shadow_top"></div>
+              <div class="services__service-shadow services__service-shadow_bottom"></div>
+            </div>
+            <div class="services__service services__service_ninth">
+              <div class="services__service-shadow services__service-shadow_top"></div>
+              <div class="services__service-shadow services__service-shadow_bottom"></div>
+            </div>
+            <div class="services__service services__service_tenth">
+              <div class="services__service-shadow services__service-shadow_top"></div>
+              <div class="services__service-shadow services__service-shadow_bottom"></div>
+            </div>
+            <div class="services__service services__service_eleventh">
+              <div class="services__service-shadow services__service-shadow_top"></div>
+              <div class="services__service-shadow services__service-shadow_bottom"></div>
+            </div>
+            <div class="services__service services__service_twelveth">
+              <div class="services__service-shadow services__service-shadow_top"></div>
+              <div class="services__service-shadow services__service-shadow_bottom"></div>
+            </div>
+            <div class="services__service services__service_thirteenth">
+              <div class="services__service-shadow services__service-shadow_top"></div>
+              <div class="services__service-shadow services__service-shadow_bottom"></div>
+            </div>
+            <div class="services__service services__service_fourteenth">
+              <div class="services__service-shadow services__service-shadow_top"></div>
+              <div class="services__service-shadow services__service-shadow_bottom"></div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- <div class="container"> -->
+        
+        
+        <!-- <section class="slider">
+          <div class="container container_slider swiper-container">
+            <div class="slider__wrapper"></div>
+            <div class="slider__wrapper swiper-wrapper"></div>
+            <button class="slider__left swiper-button-prev"></button>
+            <button class="slider__right swiper-button-next"></button>
+            <div class="thumbnails"></div>
+          </div>
+          <div class="container">
+            <div class="slides">
+              
+            </div>
+          </div>
           
+        </section> -->
+      <!-- </div> -->
+
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__footer-wrapper">
+          <span class="footer__span">Контакты</span>
+          <ul class="footer__list">
+            <li class="footer__list-element">
+              <i class="footer__list-element-logo fab fa-facebook-f"></i>
+              <!-- <div class="footer__list-element-overlay"></div> -->
+            </li>
+            <li class="footer__list-element">
+              <i class="footer__list-element-logo fab fa-whatsapp"></i>
+              <!-- <div class="footer__list-element-overlay"></div> -->
+            </li>
+            <li class="footer__list-element">
+              <i class="footer__list-element-logo fab fa-telegram-plane"></i>
+              <!-- <div class="footer__list-element-overlay"></div> -->
+            </li>
+            <li class="footer__list-element">
+              <i class="footer__list-element-logo fab fa-instagram"></i>
+              <!-- <div class="footer__list-element-overlay"></div> -->
+            </li>
+            <li class="footer__list-element">
+              <i class="footer__list-element-logo fab fa-docker"></i>
+              <!-- <div class="footer__list-element-overlay"></div> -->
+            </li>
+          </ul>
         </div>
-      </div> -->
-      
-    </section>
-  </main>
+      </div>
+    </footer>
+  <!-- <section class="popup">
+    <h2 class="popup__heading">Это модальное окно</h2>
+  </section> -->
   <template id="slider">
     <div class="slides">
     </div>
@@ -88,11 +191,13 @@
     <button class="slider__thumbnail"></button>
   </template>
   <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-  <script src="./js/components/Section.js"></script>
-  <script src="./js/components/Slider.js"></script>
+  <!-- <script src="./js/components/Section.js"></script>
+  <script src="./js/components/Slider.js"></script> -->
   <script src="./js/components/pic.js"></script>
   <script src="./js/pics.js"></script>
-  <script src="./js/main.js"></script>
+  <script src="./js/utils.js"></script>
+  <script src="./js/index.js"></script>
+  <!-- <script src="./js/main.js"></script> -->
   <!-- <script src="./js/sliderTest.js"></script> -->
 </body>
 </html>

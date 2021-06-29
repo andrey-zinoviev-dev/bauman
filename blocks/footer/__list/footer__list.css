@@ -1,0 +1,6 @@
+.footer__list {
+  width: calc(100% - 92px);
+  display: flex;
+  justify-content: space-between;
+  margin-left: 10%;
+}

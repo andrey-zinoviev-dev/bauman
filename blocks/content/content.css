@@ -1,0 +1,14 @@
+@import url(./__text-wrapper/content__text-wrapper.css);
+@import url(./__headline/content__headline.css);
+@import url(./__para/content__para.css);
+@import url(./__button-wrapper/content__button-wrapper.css);
+@import url(./__button/content__button.css);
+.content {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-image: url(../../pics/bg-test.png);
+  background-position: center;
+}
