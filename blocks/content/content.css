@@ -5,10 +5,11 @@
 @import url(./__button/content__button.css);
 .content {
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   display: flex;
-  justify-content: flex-start;
   align-items: center;
-  background-image: url(../../pics/bg-test.png);
-  background-position: center;
+  background-image: url(../../pics/illustrAndreyPNG.png);
+  background-position: right;
+  background-size: cover;
+  position: relative;
 }

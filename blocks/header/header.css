@@ -13,6 +13,8 @@
   z-index: 1; */
   position: absolute;
   z-index: 2;
-  right: 15%;
-  top: 5%;
+  /* right: 15%;
+  top: 5%; */
+  right: 5%;
+  top: 12%;
 }

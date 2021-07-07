@@ -2,4 +2,9 @@
     /* padding: 48px 0; */
     position: relative;
     z-index: 1;
+    overflow-y: hidden;
+    overflow-x: scroll;
 }
+.main::-webkit-scrollbar {
+    display: none;
+  }

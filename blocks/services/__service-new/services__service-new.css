@@ -1,0 +1,53 @@
+.services__service-new {
+  width: 300px;
+  height: 380px;
+  border-radius: 15px;
+  /* display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-end; */
+  /* overflow: hidden; */
+  position: relative;
+  background-size: cover;
+  padding: 0.5% 0.5% 0.5% 7%;
+  box-sizing: border-box;
+  border: none;
+  /* background-color: rgba(255, 255, 255, 0.15); */
+  backdrop-filter: blur(3px);
+  transition: all 0.5s ease-in-out;
+}
+.services__service-new:hover {
+  border: 2px solid rgba(246, 66, 254, 1);
+  box-shadow: 0 0 20px rgb(7 147 223), 0 0 30px rgb(7 147 223);
+}
+/* .services__service-new::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(3px);
+} */
+/* .services__service-new:hover {
+  border: 2px solid rgba(246, 66, 254, 1);
+} */
+ /* .services__service-new:nth-child(1) {
+  background-image: url(../../../pics/Science_PNG.png);
+  background-position: bottom;
+} */
+/*
+.services__service-new:nth-child(1):hover {
+  background-size: 195%;
+}
+.services__service-new:nth-child(2) {
+  background-image: url(https://d1op3t2pafha76.cloudfront.net/wp-content/uploads/content/dam/pe/en/articles/2019/05/sargent-lundy-buying-into-nuscale-smr-nuclear-design-efforts/leftcolumn/article/headerimage/file.png);
+  background-position: center;
+}
+.services__service-new:nth-child(3) {
+  background-image: url(https://www.uni-jet.com/img/server.jpg);
+}
+.services__service-new:nth-child(4) {
+  background-image: url(https://www.normacs.info/uploads/ckeditor/pictures/3854/4.png);
+} */

@@ -8,5 +8,6 @@
   position: absolute;
   bottom: 5%;
   z-index: 2;
-  right: 15%;
+  /* right: 15%; */
+  right: 3%;
 }

@@ -1,3 +1,5 @@
 .overall-container {
-  display: flex;
+  display: inline-flex;
+  align-items: center;
+  height: 100vh;
 }

@@ -1,10 +1,13 @@
+const mainContainer = document.querySelector('.main');
 const footerButtons = Array.from(document.querySelectorAll('.footer__list-element'));
+const scrollButton = document.querySelector('.content__button');
 const footer = document.querySelector('.footer');
 const footerLeftOffset = footer.offsetLeft;
 const footerTopOffset = footer.offsetTop;
 
 const rotateDegree = 15;
 const perspective = 500;
+let scrollParameter = 0;
 // const footerListOffset = footer.querySelector('.footer__list').offsetLeft;
 // console.log(footerListOffset);
 
