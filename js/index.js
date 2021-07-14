@@ -9,31 +9,33 @@ footerButtons.forEach((button) => {
 //   mainContainer.scrollLeft = -750;
 // })
 
-window.addEventListener('wheel', (evt) => {
+//раскомментировать для горизонтального скролла
+
+// window.addEventListener('wheel', (evt) => {
   
-  const amountToScroll = - evt.wheelDelta*1;
-  // if(scrollParameter <= 0) {
-  //   if(amountToScroll)
-  // }
-  if(scrollParameter >= mainContainer.clientWidth) {
+//   const amountToScroll = - evt.wheelDelta*1;
+//   // if(scrollParameter <= 0) {
+//   //   if(amountToScroll)
+//   // }
+//   if(scrollParameter >= mainContainer.clientWidth) {
 
-    if (amountToScroll > 0) {
-      return;
-    }
+//     if (amountToScroll > 0) {
+//       return;
+//     }
 
-    // return scrollParameter = scrollParameter + amountToScroll;
+//     // return scrollParameter = scrollParameter + amountToScroll;
 
-  } 
+//   } 
 
-  if(scrollParameter <= 0) {
+//   if(scrollParameter <= 0) {
 
-    if (amountToScroll < 0) {
-      return;
-    }
+//     if (amountToScroll < 0) {
+//       return;
+//     }
     
-  }
-    scrollParameter = scrollParameter + amountToScroll;
+//   }
+//     scrollParameter = scrollParameter + amountToScroll;
   
-  mainContainer.scrollTo({left: scrollParameter, behavior: "smooth"})
-  evt.preventDefault();
-}, {passive: false})
+//   mainContainer.scrollTo({left: scrollParameter, behavior: "smooth"})
+//   evt.preventDefault();
+// }, {passive: false});

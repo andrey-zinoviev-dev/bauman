@@ -25,6 +25,7 @@
 @import url(../blocks/services/__service/_fourteenth/services__service_fourteenth.css);
 @import url(../blocks/services/__service-shadow/_top/services__service-shadow_top.css);
 @import url(../blocks/services/__service-shadow/_bottom/services__service-shadow_bottom.css);
+@import url(../blocks/clients/clients.css);
 @import url(../blocks/slider/slider.css);
 @import url(../blocks/slides/slides.css);
 @import url(../blocks/thumbnails/thumbnails.css);
@@ -32,6 +33,9 @@
 ul {
     padding: 0;
     list-style: none;
+}
+h3, p {
+    margin: 0;
 }
 a {
     color: black;
