@@ -5,6 +5,7 @@
 @import url(./__list-element-overlay/footer__list-element-overlay.css);
 @import url(./__list-element-logo/footer__list-element-logo.css);
 .footer {
+  display: none;
   position: absolute;
   bottom: 5%;
   z-index: 2;

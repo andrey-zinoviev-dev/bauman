@@ -60,11 +60,17 @@
               </div>
             </div>
           </div>
-          <div class="overlay"></div>
+          <!-- <div class="overlay"></div> -->
+          <img class="content__vent content__vent_order_first" src="./pics/commission-1.png" alt="лопасть">
+          <img class="content__vent content__vent_order_second" src="./pics/commission-1.png" alt="лопасть">
+          <img class="content__vent content__vent_order_third" src="./pics/commission-1.png" alt="лопасть">
+          <img class="content__vent content__vent_order_fourth" src="./pics/commission-1.png" alt="лопасть">
+          <img class="content__vent content__vent_order_fifth" src="./pics/commission-1.png" alt="лопасть">
+          <img class="content__vent content__vent_order_sixth" src="./pics/commission-1.png" alt="лопасть">
         </section>
         <section class="services">
           <div class="container">
-            <h3 class="services__heading">Каталог</h3>
+            <h2 class="services__heading">Каталог</h2>
             <p class="services__para">Продукция компании</p>
             <div class="services__wrapper">
               <div class="services__service-new">
@@ -214,6 +220,50 @@
             <button class="contact__form-button"></button>
           </form>
         </section> -->
+        <section class="reviews">
+          <div class="container">
+            <h2 class="reviews__headline">Отзывы о нас</h2>
+
+          </div>
+          <div class="reviews__scroll">
+            <div class="reviews__wrapper">
+              <article class="reviews__review">
+                <img class="reviews__review-img" src="./pics/alex_01.jpg" alt="Алекс дикий">
+                <p class="reviews__review-para">Прекрасная станция получилась, работает без нареканий, ребята руками ее настраивают, все живы-целы, рекомендую</p>
+                <h3 class="reviews__review_heading">Алекс дикий</h3>
+                <img class="reviews__review-quote-logo" src="./pics/923778-200.png" alt="знак цитаты">
+              </article>
+              <article class="reviews__review">
+                <img class="reviews__review-img" src="./pics/alex_02.jpg" alt="Алекс дикий">
+                <p class="reviews__review-para">Прекрасная станция получилась, работает без нареканий, ребята руками ее настраивают, все живы-целы, рекомендую</p>
+                <h3 class="reviews__review_heading">Алекс дикий</h3>
+                <img class="reviews__review-quote-logo" src="./pics/923778-200.png" alt="знак цитаты">
+              </article>
+              <article class="reviews__review">
+                <img class="reviews__review-img" src="./pics/dronis_01.jpg" alt="Алекс дикий">
+                <p class="reviews__review-para">Прекрасная станция получилась, работает без нареканий, ребята руками ее настраивают, все живы-целы, рекомендую</p>
+                <h3 class="reviews__review_heading">Алекс дикий</h3>
+                <img class="reviews__review-quote-logo" src="./pics/923778-200.png" alt="знак цитаты">
+              </article>
+              <article class="reviews__review">
+                <img class="reviews__review-img" src="./pics/dronis_02.jpg" alt="Алекс дикий">
+                <p class="reviews__review-para">Прекрасная станция получилась, работает без нареканий, ребята руками ее настраивают, все живы-целы, рекомендую</p>
+                <h3 class="reviews__review_heading">Алекс дикий</h3>
+                <img class="reviews__review-quote-logo" src="./pics/923778-200.png" alt="знак цитаты">
+              </article>
+            </div>
+            <ul class="reviews__buttons">
+
+            </ul>
+          </div>
+
+          <button class="reviews__button reviews__button_type_left">
+            <i class="reviews__button-sign fas fa-chevron-left"></i>
+          </button>
+          <button class="reviews__button reviews__button_type_right">
+            <i class="reviews__button-sign fas fa-chevron-right"></i>
+          </button>
+        </section>
         <section class="clients">
           <div class="container">
             <h3 class="clients__headline">Наши Клинеты</h3>
@@ -240,11 +290,36 @@
                 <!-- <img src="" alt=""> -->
               </article>
             </div>
-            <section class="collaboration">
-              
-            </section>
           </div>
-          
+        </section>
+        <section class="collaboration">
+          <!-- <div class="container container_display-type_flex">
+           
+          </div> -->
+          <div class="collaboration__flex-box">
+            <div class="collaboration__text-wrapper collaboration__text-wrapper_small-width">
+              <h2 class="collaboration__headline">Заинтересованы в совместном проекте?</h2>
+              <p class="collaboration__para">
+                Мы готовы предложить Вам самые передовые материалы и конструкции, чтобы Вы произвели передовой продукт или вопротили в жизнь Ваш самый амбициозный проект.
+              </p>
+            </div>
+            <div class="collaboration__text-wrapper collaboration__text-wrapper_skewed">
+              <!-- <button class="collaboration__button">Связаться с нами</button> -->
+              
+              <div class="collaboration__text-wrapper-background">
+                <h2 class="collaboration__headline">Заинтересованы в совместном проекте?</h2>
+                <p class="collaboration__para">
+                  Мы готовы предложить Вам самые передовые материалы и конструкции, чтобы Вы произвели передовой продукт или вопротили в жизнь Ваш самый амбициозный проект.
+                </p>
+              </div>
+            </div>
+            <div class="collaboration__text-wrapper collaboration__text-wrapper_small-width">
+              <h2 class="collaboration__headline">Гарантия на продукцию</h2>
+              <p class="collaboration__para">
+                Мы готовы предложить Вам самые передовые материалы и конструкции, чтобы Вы произвели передовой продукт или вопротили в жизнь Ваш самый амбициозный проект.
+              </p>
+            </div>
+          </div>
         </section>
       </div>
               <!-- <div class="services__service services__service_thirteenth">
@@ -325,6 +400,11 @@
   </template>
   <template id="thumbnail">
     <button class="slider__thumbnail"></button>
+  </template>
+  <template id="reviews-thumbnail">
+    <button class="reviews__buttons-button">
+      <div class="reviews__buttons-button-round"></div>
+    </button>
   </template>
   <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
   <!-- <script src="./js/components/Section.js"></script>

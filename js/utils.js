@@ -11,6 +11,63 @@ let scrollParameter = 0;
 // const footerListOffset = footer.querySelector('.footer__list').offsetLeft;
 // console.log(footerListOffset);
 
+// const arrowButtons = Array.from(document.querySelectorAll('.reviews__button'));
+const arrowButtonLeft = document.querySelector('.reviews__button_type_left');
+const arrowButtonRight = document.querySelector('.reviews__button_type_right');
+const reviewsSection = document.querySelector('.reviews');
+const reviewSectionScroll = reviewsSection.querySelector('.reviews__scroll');
+const reviewsContainer = reviewsSection.querySelector('.reviews__wrapper');
+const reviews = Array.from(reviewsSection.querySelectorAll('.reviews__review'));
+
+// кнопки отзывов
+const reviewButtonsWrapper = reviewsSection.querySelector('.reviews__buttons');
+const reviewButtonTemplate = document.querySelector('#reviews-thumbnail');
+
+// кнопки под отзывами
+const reviewsThumbnailsDiv = document.querySelector('.reviews__buttons');
+
+
+let firstReviewOffset = 0;
+let previousReviewOffset = 0;
+let currentReviewOffset = 0;
+let followingReviewOffset = 0;
+let reviewOrder = 0;
+
+//touch variables
+let isTouched = false;
+let initialCoord = 0;
+let previousTranslate = 0;
+let currentTranslate = 0;
+
+//drag variables
+let initialDragCoord = 0; 
+let movedDragCoord = 0;
+let finalDragCoord = 0;
+let dragTranslate = 0;
+let isDragged = false;
+let reviewScroll = 0;
+
+//thumbnails variables
+let previousButton = null;
+let currentButton;
+
+reviews.forEach((child, i, array) => {
+  if(i < 0) {
+    return;
+  }
+  if(i > array.length - 1) {
+    return;
+  }
+  if(i === 0) {
+    // console.log(array[i + 2]);
+    return firstReviewOffset = array[i + 2].offsetLeft - array[i + 1].offsetLeft;
+  }
+  // console.log(array[i], array[i].offsetLeft - array[i - 1].offsetLeft);
+  previousReviewOffset = array[i - 1].offsetLeft;
+  followingReviewOffset = array[i].offsetLeft;
+  currentReviewOffset = followingReviewOffset - previousReviewOffset;
+});
+
 function showMouseEvent(logo, evt) {
   // if(evt.target.classList.contains('footer__list-element-logo')) {
   //   return;
@@ -42,4 +99,136 @@ function deactivateTiltEffect(element) {
   setTimeout(() => {
     element.style.transition = 'none';
   }, 250);
+}
+
+function translateReviewsLeft() {
+  previousButton = reviewsThumbnailsDiv.children[reviewOrder + 1];
+  reviewOrder -= 1;
+  
+  if(reviewOrder < - 1) {
+    reviewOrder = reviews.length - 2;
+  }
+  switchThumbnail(reviewOrder);
+  return reviewsContainer.style.transform = `translateX(${-currentReviewOffset * reviewOrder}px)`;
+}
+
+function translateReviewsRight() {
+  previousButton = reviewsThumbnailsDiv.children[reviewOrder + 1];
+  reviewOrder += 1;
+  
+  if(reviewOrder >= reviews.length - 1) {
+    reviewOrder = -1;
+    // return reviewsContainer.style.transform = `translateX(${currentReviewOffset})`
+  }
+  switchThumbnail(reviewOrder);
+  return reviewsContainer.style.transform = `translateX(${-currentReviewOffset * reviewOrder}px)`;
+}
+
+//touch functions
+function initiateTouchMovement(evt) {
+  // console.log('move is started');
+  isTouched = true;
+  initialCoord = evt.touches[0].clientX;
+}
+
+function continueTouchMovement(evt) {
+  if(isTouched) {
+    currentTranslate = evt.touches[0].clientX - initialCoord + previousTranslate;
+    reviewsContainer.style.transform = `translateX(${currentTranslate}px)`;
+    if(reviewOrder <= -1) {
+      // isTouched = false;
+      if(currentTranslate > previousTranslate) {
+        isTouched = false;
+      }
+    }
+    if(reviewOrder >= reviews.length - 2) {
+      // isTouched = false
+      if(currentTranslate < previousTranslate) {
+        isTouched = false;
+      }
+    }
+  }
+}
+
+function finishTouchMovement() {
+  isTouched = false;
+  const movedBy = currentTranslate - previousTranslate;
+  if(movedBy < - 100) {
+    reviewOrder += 1;
+
+  }
+  if(movedBy > 100) {
+    reviewOrder -= 1;
+    
+  }
+  currentTranslate = reviewOrder * -currentReviewOffset;
+  previousTranslate = currentTranslate;
+  reviewsContainer.style.transform = `translateX(${currentTranslate}px)`;
+};
+
+//фукнции для перетягивания контейнера с отзывами (drag-n-drop)
+function dragInitiated(evt) {
+  reviewsContainer.style.cursor = 'grabbing';
+  initialCoord = evt.clientX;
+  isDragged = true;
+  reviewScroll = reviewSectionScroll.scrollLeft;
+  // return reviewsContainer.addEventListener('mousemove', dragInProcess);
+}
+
+function dragInProcess(evt) {
+  if(!isDragged) {
+    return;
+  }
+  movedDragCoord = evt.clientX;
+  dragTranslate = movedDragCoord - initialCoord;
+  reviewSectionScroll.scrollLeft = -dragTranslate + reviewScroll;
+  // return moveResult;
+}
+
+function dragFinish() {
+  isDragged = false;
+  reviewsContainer.style.cursor = 'grab';
+  // return reviewsContainer.style.transform = `translateX(${dragTranslate}px)`;
+  // reviewsContainer.removeEventListener('mousemove', dragInProcess);
+  // return finalDragCoord = movedDragCoord - initialCoord + dragTranslate;
+}
+
+// function dragContainer(pixels) {
+//   return reviewsContainer.style.transform = `translateX(${pixels}px)`;
+// }
+
+function generateTemplate(element, selector) {
+  const template = element.content.cloneNode(true).querySelector(selector);
+  return template;
+}
+
+function switchThumbnail(i, evt) {
+  const button = reviewsThumbnailsDiv.children[i + 1];
+  button.classList.add('reviews__buttons-button_status_active');
+  previousButton.classList.remove('reviews__buttons-button_status_active');
+  previousButton = button;
+  // console.log(evt.target);
+}
+
+function clickThumbnail(button, i) {
+  return () => {
+    // console.log(previousButton);
+    currentButton = button;
+    currentButton.classList.add('reviews__buttons-button_status_active');
+
+    previousButton.classList.remove('reviews__buttons-button_status_active');
+    previousButton = button;
+    // console.log(previousButton);
+
+    reviewOrder = i - 1;
+    return reviewsContainer.style.transform = `translateX(${-currentReviewOffset * reviewOrder}px)`
+    // if(!previousButton) {
+    //   return;
+    // }
+    // previousButton.classList.remove('reviews__buttons-button_status_active');
+    // previousButton = currentButton;
+    // console.log(previousButton)
+  
+  }
+  // button.classList.add('reviews__buttons-button_status_active');
 }
