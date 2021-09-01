@@ -2,8 +2,11 @@ const mainContainer = document.querySelector('.main');
 const footerButtons = Array.from(document.querySelectorAll('.footer__list-element'));
 const scrollButton = document.querySelector('.content__button');
 const footer = document.querySelector('.footer');
+const footerList = footer.querySelector('.footer__list');
+
 const footerLeftOffset = footer.offsetLeft;
 const footerTopOffset = footer.offsetTop;
+const footerListTopOffset = footerList.offsetTop;
 
 const rotateDegree = 15;
 const perspective = 500;
@@ -51,6 +54,16 @@ let reviewScroll = 0;
 let previousButton = null;
 let currentButton;
 
+//попапы и их переменные
+const overallContainer = document.querySelector('.overall-container');
+const popups = Array.from(document.querySelectorAll('.popup'));
+const firstPopup = document.querySelector('.popup');
+const registerPopup = document.querySelector('.popup_register');
+
+// const popup = document.querySelector('.popup');
+const openButtons = Array.from(document.querySelectorAll('.header__services-list-element-button'));
+// const popupCloseButton = document.querySelector('.popup__button-close');
+
 reviews.forEach((child, i, array) => {
   if(i < 0) {
     return;
@@ -74,8 +87,10 @@ function showMouseEvent(logo, evt) {
   // }
   const logoHeight = logo.clientHeight;
   const logoWidth = logo.clientWidth;
+  
   const logoXCoordinate = evt.pageX - footerLeftOffset - logo.offsetLeft - logoWidth/2;
-  const logoYCoordinate = evt.pageY - footerTopOffset - logo.offsetTop - logoHeight/2;
+  const logoYCoordinate = evt.pageY - footerTopOffset - footerListTopOffset - logo.offsetTop - logoHeight/2;
+  
   const rotateX = rotateDegree*logoYCoordinate/(logoHeight/2);
   const rotateY = rotateDegree*logoXCoordinate/(logoWidth/2);
   // console.log(logoXCoordinate, logoYCoordinate);
@@ -202,7 +217,7 @@ function generateTemplate(element, selector) {
   return template;
 }
 
-function switchThumbnail(i, evt) {
+function switchThumbnail(i) {
   const button = reviewsThumbnailsDiv.children[i + 1];
   button.classList.add('reviews__buttons-button_status_active');
   previousButton.classList.remove('reviews__buttons-button_status_active');
@@ -212,23 +227,30 @@ function switchThumbnail(i, evt) {
 
 function clickThumbnail(button, i) {
   return () => {
-    // console.log(previousButton);
+    
     currentButton = button;
     currentButton.classList.add('reviews__buttons-button_status_active');
 
     previousButton.classList.remove('reviews__buttons-button_status_active');
     previousButton = button;
-    // console.log(previousButton);
 
     reviewOrder = i - 1;
-    return reviewsContainer.style.transform = `translateX(${-currentReviewOffset * reviewOrder}px)`
-    // if(!previousButton) {
-    //   return;
-    // }
-    // previousButton.classList.remove('reviews__buttons-button_status_active');
-    // previousButton = currentButton;
-    // console.log(previousButton)
-  
+    return reviewsContainer.style.transform = `translateX(${-currentReviewOffset * reviewOrder}px)`;
   }
-  // button.classList.add('reviews__buttons-button_status_active');
+}
+
+function openPopup (popup) {
+  // console.log(button);
+  return () => {
+    popup.classList.add('popup_opened');
+    overallContainer.classList.add('overall-container_blurred');
+    // console.log(button);
+  };
+}
+
+function closePopup (popupSection) {
+  return() => {
+    popupSection.classList.remove('popup_opened');
+    overallContainer.classList.remove('overall-container_blurred');
+  };
 }

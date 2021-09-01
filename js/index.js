@@ -74,3 +74,23 @@ reviewsContainer.addEventListener('touchend', finishTouchMovement);
 // reviewsContainer.addEventListener('mousedown', dragInitiated);
 // reviewsContainer.addEventListener('mousemove', dragInProcess);
 // reviewsContainer.addEventListener('mouseup', dragFinish);
+
+//обработчики попапа
+openButtons.forEach((button, i) => {
+  // console.log(button);
+  if(i === 0) {
+   return button.addEventListener('click', openPopup(firstPopup));
+  }
+  if(i === 1) {
+    return button.addEventListener('click', openPopup(registerPopup));
+  }
+
+  // button.addEventListener('click', openPopup(button));
+});
+
+popups.forEach((popup) => {
+  const closeButton = popup.querySelector('.popup__button-close');
+  const overlay = popup.querySelector('.popup__overlay');
+  closeButton.addEventListener('click', closePopup(popup));
+  overlay.addEventListener('click', closePopup(popup));
+})

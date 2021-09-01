@@ -2,4 +2,5 @@
   /* display: inline-flex;
   align-items: center;
   height: 100vh; */
+  transition: filter 0.25s linear 0.15s;
 }
