@@ -2,5 +2,5 @@
   /* display: inline-flex;
   align-items: center;
   height: 100vh; */
-  transition: filter 0.25s linear 0.15s;
+  transition: filter 0.5s linear 0.05s;
 }

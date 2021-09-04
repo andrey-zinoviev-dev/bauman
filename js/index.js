@@ -93,4 +93,7 @@ popups.forEach((popup) => {
   const overlay = popup.querySelector('.popup__overlay');
   closeButton.addEventListener('click', closePopup(popup));
   overlay.addEventListener('click', closePopup(popup));
-})
+});
+
+//обработчики кнопок прокрутки
+firstMainButton.addEventListener('click', scrollToSection(servicesSection));

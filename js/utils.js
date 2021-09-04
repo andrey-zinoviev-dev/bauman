@@ -22,6 +22,9 @@ const reviewSectionScroll = reviewsSection.querySelector('.reviews__scroll');
 const reviewsContainer = reviewsSection.querySelector('.reviews__wrapper');
 const reviews = Array.from(reviewsSection.querySelectorAll('.reviews__review'));
 
+const firstMainButton = document.querySelector('.content__button_first');
+const secondMainButton = document.querySelector('.content__button_second'); 
+const servicesSection = mainContainer.querySelector('.services');
 // кнопки отзывов
 const reviewButtonsWrapper = reviewsSection.querySelector('.reviews__buttons');
 const reviewButtonTemplate = document.querySelector('#reviews-thumbnail');
@@ -252,5 +255,12 @@ function closePopup (popupSection) {
   return() => {
     popupSection.classList.remove('popup_opened');
     overallContainer.classList.remove('overall-container_blurred');
+  };
+}
+
+//прокручивание по нажатию на кнопку
+function scrollToSection(section) {
+  return () => {
+    window.scrollTo({top: section.offsetTop, behavior: "smooth"});
   };
 }
