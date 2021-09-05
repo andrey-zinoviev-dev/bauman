@@ -25,6 +25,8 @@ const reviews = Array.from(reviewsSection.querySelectorAll('.reviews__review'));
 const firstMainButton = document.querySelector('.content__button_first');
 const secondMainButton = document.querySelector('.content__button_second'); 
 const servicesSection = mainContainer.querySelector('.services');
+const backgroundVideo = mainContainer.querySelector('.reviews__review-img');
+
 // кнопки отзывов
 const reviewButtonsWrapper = reviewsSection.querySelector('.reviews__buttons');
 const reviewButtonTemplate = document.querySelector('#reviews-thumbnail');

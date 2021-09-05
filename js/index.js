@@ -97,3 +97,10 @@ popups.forEach((popup) => {
 
 //обработчики кнопок прокрутки
 firstMainButton.addEventListener('click', scrollToSection(servicesSection));
+
+//обработчик загрузки фона
+document.addEventListener('load', function () {
+  backgroundVideo.addEventListener('load', () => {
+    console.log('video loaded');
+  });
+});
